@@ -1,1 +1,50 @@
-﻿
+﻿[
+  {
+    "id": 1,
+    "name": "Warrior"
+  },
+  {
+    "id": 2,
+    "name": "Ranger"
+  },
+  {
+    "id": 3,
+    "name": "Huntress"
+  },
+  {
+    "id": 4,
+    "name": "Sorceress"
+  },
+  {
+    "id": 5,
+    "name": "Mercenary"
+  },
+  {
+    "id": 6,
+    "name": "Monk"
+  },
+  {
+    "id": 7,
+    "name": "Druid"
+  },
+  {
+    "id": 8,
+    "name": "Witch"
+  },
+  {
+    "id": 9,
+    "name": "Class 9"
+  },
+  {
+    "id": 10,
+    "name": "Class 10"
+  },
+  {
+    "id": 11,
+    "name": "Class 11"
+  },
+  {
+    "id": 12,
+    "name": "Class 12"
+  }
+]

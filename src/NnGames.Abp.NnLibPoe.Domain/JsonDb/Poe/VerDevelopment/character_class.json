@@ -1,1 +1,30 @@
-﻿
+﻿[
+  {
+    "id": 1,
+    "name": "Duelist"
+  },
+  {
+    "id": 2,
+    "name": "Shadow"
+  },
+  {
+    "id": 3,
+    "name": "Marauder"
+  },
+  {
+    "id": 4,
+    "name": "Witch"
+  },
+  {
+    "id": 5,
+    "name": "Ranger"
+  },
+  {
+    "id": 6,
+    "name": "Templar"
+  },
+  {
+    "id": 7,
+    "name": "Scion"
+  }
+]
