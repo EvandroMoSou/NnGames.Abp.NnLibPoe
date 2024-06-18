@@ -27,7 +27,7 @@ namespace NnGames.Abp.NnLibPoe.Repositories
 
         public override string GetJsonFilePath()
         {
-            return AppDomain.CurrentDomain.BaseDirectory.Replace("bin\\Debug\\net8.0", "") + $"JsonDb\\{_poe}\\{_verison}.{_jsonName}.json";
+            return AppDomain.CurrentDomain.BaseDirectory.Replace(".Blazor\\bin\\Debug\\net8.0", "").TrimEnd('\\') + $".Domain\\JsonDb\\{_poe}\\{_verison}\\{_jsonName}.json";
         }
     }
 }

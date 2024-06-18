@@ -34,23 +34,22 @@ public class NnLibPoeMenuContributor : IMenuContributor
             )
         );
 
-        //var databaseMenu =
-        //    new ApplicationMenuItem(
-        //        NnLibPoeMenus.DatabasePrefix,
-        //        l["Menu:Database"],
-        //        "/",
-        //        icon: "fas fa-database",
-        //        order: 1
-        //    );
+        var databaseMenu =
+            new ApplicationMenuItem(
+                NnLibPoeMenus.DatabasePrefix,
+                l["Menu:Database"],
+                icon: "fas fa-database",
+                order: 1
+            );
 
-        //databaseMenu.AddItem(new ApplicationMenuItem(
-        //    NnLibPoeMenus.Database_CharacterClass,
-        //    l["Menu:Poe:Database:CharacterClass"],
-        //    url: "/Poe/Database/CharacterClass",
-        //    order: 0
-        //));
+        databaseMenu.AddItem(new ApplicationMenuItem(
+            NnLibPoeMenus.Database_CharacterClass,
+            l["Menu:Poe:Database:CharacterClass"],
+            url: "/Poe/Database/CharacterClass",
+            order: 0
+        ));
 
-        //context.Menu.Items.Insert(1, databaseMenu);
+        context.Menu.Items.Insert(1, databaseMenu);
 
 #pragma warning disable CS0162 // Unreachable code detected
         if (MultiTenancyConsts.IsEnabled)

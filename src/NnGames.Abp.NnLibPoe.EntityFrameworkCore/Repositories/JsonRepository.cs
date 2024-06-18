@@ -110,8 +110,8 @@ namespace NnGames.Abp.NnLibPoe.Repositories
         public async Task<List<TEntity>> GetPagedListAsync(int skipCount, int maxResultCount, string sorting, bool includeDetails = false, CancellationToken cancellationToken = default)
         {
             return (await GetQueryableAsync()).OrderByIf<TEntity, IQueryable<TEntity>>(!sorting.IsNullOrWhiteSpace(), sorting)
-            .PageBy(skipCount, maxResultCount)
-            .ToList();
+                .PageBy(skipCount, maxResultCount)
+                .ToList();
         }
 
         public Task<IQueryable<TEntity>> GetQueryableAsync()
@@ -141,7 +141,6 @@ namespace NnGames.Abp.NnLibPoe.Repositories
 
                 max = entity.Id;
             }
-
             Save(list);
 
             return Task.CompletedTask;
@@ -152,6 +151,7 @@ namespace NnGames.Abp.NnLibPoe.Repositories
             var list = Load();
             list.RemoveAll(x => x.Id!.Equals(entity.Id));
             list.Add(entity);
+            Save(list);
 
             return Task.FromResult(entity);
         }
@@ -169,6 +169,7 @@ namespace NnGames.Abp.NnLibPoe.Repositories
 
                 max = entity.Id;
             }
+            Save(list);
 
             return Task.CompletedTask;
         }

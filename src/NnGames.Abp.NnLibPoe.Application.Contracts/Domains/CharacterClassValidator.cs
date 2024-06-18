@@ -46,7 +46,7 @@ namespace NnGames.Abp.NnLibPoe.Domains
 
         public static string? ValidateNameContains(string? value, IStringLocalizer stringLocalizer)
         {
-            if (value == null)
+            if (string.IsNullOrWhiteSpace(value))
                 return null;
 
             if (value.Length < CharacterClassConsts.MinNameLength || value.Length > CharacterClassConsts.MaxNameLength)

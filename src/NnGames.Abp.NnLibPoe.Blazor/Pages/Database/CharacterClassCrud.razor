@@ -41,11 +41,9 @@
                         <EntityActions TItem="CharacterClassDto" EntityActionsColumn="@EntityActionsColumn">
                             <EntityAction TItem="CharacterClassDto"
                                           Text="@NL["Edit"]"
-                                          Visible=HasUpdatePermission
                                           Clicked="() => OpenEditModalAsync(context)" />
                             <EntityAction TItem="CharacterClassDto"
                                           Text="@NL["Delete"]"
-                                          Visible=HasDeletePermission
                                           Clicked="() => DeleteEntityAsync(context)"
                                           ConfirmationMessage="()=>GetDeleteConfirmationMessage(context)" />
                         </EntityActions>

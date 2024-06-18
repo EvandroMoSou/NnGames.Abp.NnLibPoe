@@ -43,6 +43,7 @@ using Volo.Abp.UI;
 using Volo.Abp.UI.Navigation;
 using Volo.Abp.UI.Navigation.Urls;
 using Volo.Abp.VirtualFileSystem;
+using Volo.Abp.AspNetCore.ExceptionHandling;
 
 namespace NnGames.Abp.NnLibPoe.Blazor;
 
@@ -101,6 +102,12 @@ public class NnLibPoeBlazorModule : AbpModule
                 serverBuilder.AddProductionEncryptionAndSigningCertificate("openiddict.pfx", "d7139224-39ed-47e8-94f6-42cd31579a95");
             });
         }
+
+        context.Services.Configure<AbpExceptionHandlingOptions>(options =>
+        {
+            options.SendExceptionsDetailsToClients = true;
+            options.SendStackTraceToClients = true;
+        });
     }
 
     public override void ConfigureServices(ServiceConfigurationContext context)
