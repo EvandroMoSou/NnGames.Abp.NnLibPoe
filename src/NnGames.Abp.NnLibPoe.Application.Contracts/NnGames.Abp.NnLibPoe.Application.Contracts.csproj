@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NnGames.Abp.NnLibPoe.Domain.Shared\NnGames.Abp.NnLibPoe.Domain.Shared.csproj" />
-    <ProjectReference Include="..\NnGames.Abp.NnLibPoe.Domain\NnGames.Abp.NnLibPoe.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

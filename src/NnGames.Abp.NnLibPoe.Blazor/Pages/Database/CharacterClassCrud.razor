@@ -1,0 +1,122 @@
+﻿@page "/Poe/Database/CharacterClass"
+@using Microsoft.Extensions.Localization
+@using Necnat.Abp.NnLibCommon.Localization
+@using NnGames.Abp.NnLibPoe.Blazor.Components.Database
+@using NnGames.Abp.NnLibPoe.Domains
+@using System.Collections.ObjectModel
+@using Volo.Abp
+@using Volo.Abp.Application.Dtos
+@using Volo.Abp.AspNetCore.Components.Web
+@using Volo.Abp.BlazoriseUI.Components
+@using Volo.Abp.Identity
+@inherits AbpCrudPageBase<ICharacterClassAppService, CharacterClassDto, int, CharacterClassResultRequestDto>
+@inject IStringLocalizer<NnLibCommonResource> NL
+@inject ICharacterClassAppService AppService
+
+<Card>
+    <CardHeader>
+        <Row Class="justify-content-between">
+            <Column ColumnSize="ColumnSize.IsAuto">
+                <h2>@L["Character Classes"]</h2>
+            </Column>
+            <Column ColumnSize="ColumnSize.IsAuto">
+                <Button Color="Color.Primary"
+                        Clicked="OpenCreateModalAsync">
+                    @NL["New"]
+                </Button>
+            </Column>
+        </Row>
+    </CardHeader>
+    <CardBody>
+        <DataGrid TItem="CharacterClassDto"
+                  Data="Entities"
+                  ReadData="OnDataGridReadAsync"
+                  CurrentPage="CurrentPage"
+                  TotalItems="TotalCount"
+                  ShowPager="true"
+                  PageSize="PageSize">
+            <DataGridColumns>
+                <DataGridEntityActionsColumn TItem="CharacterClassDto" @ref="@EntityActionsColumn">
+                    <DisplayTemplate>
+                        <EntityActions TItem="CharacterClassDto" EntityActionsColumn="@EntityActionsColumn">
+                            <EntityAction TItem="CharacterClassDto"
+                                          Text="@NL["Edit"]"
+                                          Visible=HasUpdatePermission
+                                          Clicked="() => OpenEditModalAsync(context)" />
+                            <EntityAction TItem="CharacterClassDto"
+                                          Text="@NL["Delete"]"
+                                          Visible=HasDeletePermission
+                                          Clicked="() => DeleteEntityAsync(context)"
+                                          ConfirmationMessage="()=>GetDeleteConfirmationMessage(context)" />
+                        </EntityActions>
+                    </DisplayTemplate>
+                </DataGridEntityActionsColumn>
+                <DataGridColumn TItem="CharacterClassDto"
+                                Field="@nameof(CharacterClassDto.Name)"
+                                Caption="@L[CharacterClassConsts.NameDisplay]"></DataGridColumn>
+            </DataGridColumns>
+        </DataGrid>
+    </CardBody>
+</Card>
+
+<Modal @ref="@CreateModal">
+    <ModalContent Centered Size="ModalSize.Large">
+        <Form>
+            <ModalHeader>
+                <ModalTitle>@NL["New"] @L["Character Class"]</ModalTitle>
+                <CloseButton Clicked="CloseCreateModalAsync" />
+            </ModalHeader>
+            <ModalBody>
+                <Validations @ref="@CreateValidationsRef" Model="@NewEntity" ValidateOnLoad="true">
+                    <CharacterClassWrapper @bind-Entity="NewEntity" />
+                </Validations>
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary"
+                        Clicked="CloseCreateModalAsync">
+                    @NL["Cancel"]
+                </Button>
+                <Button Color="Color.Primary"
+                        Type="@ButtonType.Submit"
+                        PreventDefaultOnSubmit="true"
+                        Clicked="CreateEntityAsync">
+                    @NL["Save"]
+                </Button>
+            </ModalFooter>
+        </Form>
+    </ModalContent>
+</Modal>
+
+<Modal @ref="@EditModal">
+    <ModalContent Centered Size="ModalSize.Large">
+        <Form>
+            <ModalHeader>
+                <ModalTitle>@L["Character Class"] - @EditingEntity.Name</ModalTitle>
+                <CloseButton Clicked="CloseEditModalAsync" />
+            </ModalHeader>
+            <ModalBody>
+                <Validations @ref="@EditValidationsRef" Model="@EditingEntity" ValidateOnLoad="false">
+                    <CharacterClassWrapper @bind-Entity="EditingEntity" />
+                </Validations>
+            </ModalBody>
+            <ModalFooter>
+                <Button Color="Color.Secondary"
+                        Clicked="CloseEditModalAsync">
+                    @NL["Cancel"]
+                </Button>
+                <Button Color="Color.Primary"
+                        Type="@ButtonType.Submit"
+                        PreventDefaultOnSubmit="true"
+                        Clicked="UpdateEntityAsync">
+                    @NL["Save"]
+                </Button>
+            </ModalFooter>
+        </Form>
+    </ModalContent>
+</Modal>
+
+@namespace NnGames.Abp.NnLibPoe.Blazor.Pages.Database
+@code
+{
+
+}

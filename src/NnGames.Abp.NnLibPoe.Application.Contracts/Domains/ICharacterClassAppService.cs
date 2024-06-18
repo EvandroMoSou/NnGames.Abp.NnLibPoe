@@ -3,10 +3,10 @@ using Volo.Abp.Application.Services;
 
 namespace NnGames.Abp.NnLibPoe.Domains
 {
-    public interface IBillingClientAppService :
+    public interface ICharacterClassAppService :
         ICrudAppService<
-            CharacterClass,
-            Guid,
+            CharacterClassDto,
+            int,
             CharacterClassResultRequestDto>
     {
 

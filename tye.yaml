@@ -1,0 +1,8 @@
+name: prodamsp
+registry: evandromosou
+services:
+- name: poe
+  project: src\NnGames.Abp.NnLibPoe.Blazor\NnGames.Abp.NnLibPoe.Blazor.csproj
+  bindings:
+  - protocol: https
+    port: 44399

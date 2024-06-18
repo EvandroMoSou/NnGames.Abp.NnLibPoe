@@ -1,0 +1,37 @@
+﻿@using Microsoft.Extensions.Localization;
+@using Necnat.Abp.NnLibCommon.Blazor.Extensions
+@using Necnat.Abp.NnLibCommon.Localization
+@using NnGames.Abp.NnLibPoe.Domains
+@using Volo.Abp.AspNetCore.Components
+@inherits AbpComponentBase
+@inject IStringLocalizer<NnLibCommonResource> NL
+
+<Fields>
+    <Validation Validator="@ValidateName">
+        <Field ColumnSize="ColumnSize.Is12">
+            <FieldLabel>@L[CharacterClassConsts.NameDisplay]</FieldLabel>
+            <TextEdit @bind-Text="@Entity!.Name">
+                <Feedback>
+                    <ValidationError />
+                </Feedback>
+            </TextEdit>
+        </Field>
+    </Validation>
+</Fields>
+
+
+@namespace NnGames.Abp.NnLibPoe.Blazor.Components.Database
+@code {
+
+    [Parameter]
+    public CharacterClassDto? Entity { get; set; }
+
+    [Parameter]
+    public EventCallback<CharacterClassDto?> EntityChanged { get; set; }
+
+    void ValidateName(ValidatorEventArgs e)
+    {
+        e.WithError(CharacterClassValidator.ValidateName((string?)e.Value, NL));
+    }
+
+}
