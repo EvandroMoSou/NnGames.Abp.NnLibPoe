@@ -1,50 +1,50 @@
 ﻿[
   {
-    "id": 1,
-    "name": "Warrior"
+    "Id": 1,
+    "Name": "Warrior"
   },
   {
-    "id": 2,
-    "name": "Ranger"
+    "Id": 2,
+    "Name": "Ranger"
   },
   {
-    "id": 3,
-    "name": "Huntress"
+    "Id": 3,
+    "Name": "Huntress"
   },
   {
-    "id": 4,
-    "name": "Sorceress"
+    "Id": 4,
+    "Name": "Sorceress"
   },
   {
-    "id": 5,
-    "name": "Mercenary"
+    "Id": 5,
+    "Name": "Mercenary"
   },
   {
-    "id": 6,
-    "name": "Monk"
+    "Id": 6,
+    "Name": "Monk"
   },
   {
-    "id": 7,
-    "name": "Druid"
+    "Id": 7,
+    "Name": "DruId"
   },
   {
-    "id": 8,
-    "name": "Witch"
+    "Id": 8,
+    "Name": "Witch"
   },
   {
-    "id": 9,
-    "name": "Class 9"
+    "Id": 9,
+    "Name": "Marauder"
   },
   {
-    "id": 10,
-    "name": "Class 10"
+    "Id": 10,
+    "Name": "Duelist"
   },
   {
-    "id": 11,
-    "name": "Class 11"
+    "Id": 11,
+    "Name": "Shadow"
   },
   {
-    "id": 12,
-    "name": "Class 12"
+    "Id": 12,
+    "Name": "Templar"
   }
 ]

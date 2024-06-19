@@ -1,1 +1,30 @@
-[{"id":1,"name":"Duelist","Id":0},{"id":2,"name":"Shadow","Id":0},{"id":3,"name":"Marauder","Id":0},{"id":4,"name":"Witch","Id":0},{"id":6,"name":"Templar","Id":0},{"id":7,"name":"Scion","Id":0},{"id":5,"name":"Ranger","Id":0}]
+[
+  {
+    "Id": 1,
+    "Name": "Duelist"
+  },
+  {
+    "Id": 2,
+    "Name": "Shadow"
+  },
+  {
+    "Id": 3,
+    "Name": "Marauder"
+  },
+  {
+    "Id": 4,
+    "Name": "Witch"
+  },
+  {
+    "Id": 6,
+    "Name": "Templar"
+  },
+  {
+    "Id": 7,
+    "Name": "Scion"
+  },
+  {
+    "Id": 5,
+    "Name": "Ranger"
+  }
+]
